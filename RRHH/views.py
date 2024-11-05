@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import render
+from .models import Department
+from .models import JobPosition
 # Create your views here.
 
 def index(request):
@@ -33,3 +36,14 @@ def salary_history(request):
 def vacation(request):
     template = loader.get_template("vacation.html")
     return HttpResponse(template.render())
+
+
+
+def list_departments(request):
+    departments = Department.objects.all()
+    return render(request, 'department.html', {'departments': departments})
+
+
+def list_job_positions(request):
+    job_positions = JobPosition.objects.select_related('fk_department').all()
+    return render(request, 'job_position.html', {'job_positions': job_positions})

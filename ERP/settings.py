@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'ERP.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'human_resources',  # El nombre de tu base de datos
+        'USER': 'root',             # Tu usuario de MySQL
+        'PASSWORD': '12345678',     # Tu contraseña de MySQL
+        'HOST': 'localhost',        # Cambia si es necesario
+        'PORT': '3306',             # Cambia si es necesario
     }
 }
 

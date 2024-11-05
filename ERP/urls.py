@@ -14,18 +14,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# ERP/urls.py
+
 from django.contrib import admin
 from django.urls import path
 from RRHH.views import *
 
+from RRHH.views import list_job_positions
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', login,name='log'),
-    path('index/', index,name='ini'),
-    path('department/', department, name='dep'),
+    path('', login, name='log'),
+    path('index/', index, name='ini'),
     path('employee/', employee, name='emp'),
-    path('job_position/', job_position, name='job'),
+    path('job_position/', list_job_positions, name='job_position_list'),  # Ruta para job_position
     path('payment_date/', payment_date, name='pay'),
     path('salary_history/', salary_history, name='sal'),
     path('vacation/', vacation, name='vac'),
+    path('departments/', list_departments, name='department_list'),
 ]
+
