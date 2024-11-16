@@ -27,11 +27,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login, name='log'),
     path('index/', index, name='ini'),
-    path('employee/', employee, name='emp'),
-    path('job_position/', list_job_positions, name='job_position_list'),  # Ruta para job_position
-    path('payment_date/', payment_date, name='pay'),
-    path('salary_history/', salary_history, name='sal'),
-    path('vacation/', vacation, name='vac'),
+    path('employees/', list_employees, name='list_employees'),
+    path('job_position/', list_job_positions, name='job_position_list'),  
+    path('payment_dates/', list_payment_dates, name='list_payment_dates'),
+    path('salary_histories/', list_salary_histories, name='list_salary_histories'),
+    path('vacations/', list_vacations, name='list_vacations'),
     path('departments/', list_departments, name='department_list'),
 ]
 

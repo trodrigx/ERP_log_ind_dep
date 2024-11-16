@@ -13,7 +13,37 @@
 
     {% include 'encabezado.html' %}
 
-
+    <div class="container mt-5">
+        <h2 class="mb-4">Vacaciones</h2>
+        <table class="table table-striped">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Empleado</th>
+                    <th>Fecha de Solicitud</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vacation in vacations %}
+                <tr>
+                    <td>{{ vacation.pkInt }}</td>
+                    <td>{{ vacation.employee.firstName }} {{ vacation.employee.lastName }}</td>
+                    <td>{{ vacation.requestDate }}</td>
+                    <td>{{ vacation.startDate }}</td>
+                    <td>{{ vacation.endDate }}</td>
+                    <td>{{ vacation.managementStatus }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No hay solicitudes de vacaciones disponibles.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     
 
     {% include 'footer.html' %}

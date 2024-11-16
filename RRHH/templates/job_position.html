@@ -14,7 +14,6 @@
 
     {% include 'encabezado.html' %}
 
-
     <div class="container mt-5">
         <h2 class="mb-4">Posiciones de Trabajo</h2>
         <table class="table table-striped">
@@ -29,10 +28,10 @@
             <tbody>
                 {% for job in job_positions %}
                 <tr>
-                    <td>{{ job.pk_int }}</td>
-                    <td>{{ job.job_position_name }}</td>
+                    <td>{{ job.pkInt }}</td>
+                    <td>{{ job.jobPositionName }}</td>
                     <td>{{ job.description }}</td>
-                    <td>{{ job.fk_department.department_name }}</td>
+                    <td>{{ job.department.departmentName }}</td>
                 </tr>
                 {% empty %}
                 <tr>
